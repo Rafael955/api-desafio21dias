@@ -12,5 +12,6 @@ namespace webapi.Servico
 
         public DbSet<Aluno> Alunos { get; set; }
         public DbSet<Professor> Professores { get; set; }
+        public DbSet<Fornecedor> Fornecedores { get; set; }
     }
 }
