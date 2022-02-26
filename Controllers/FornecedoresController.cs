@@ -49,7 +49,7 @@ namespace webapi.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost("cadastrar-fornecedor")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nome,Matricula,Notas")] Fornecedor fornecedor)
+        public async Task<IActionResult> Create(Fornecedor fornecedor)
         {
             _context.Add(fornecedor);
             await _context.SaveChangesAsync();
@@ -61,7 +61,7 @@ namespace webapi.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPut("atualizar-fornecedor/{id:int}")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,Matricula,Notas")] Fornecedor fornecedor)
+        public async Task<IActionResult> Edit(int id, Fornecedor fornecedor)
         {
             if (id != fornecedor.Id)
             {

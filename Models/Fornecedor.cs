@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace webapi.Models
 {
@@ -23,6 +24,7 @@ namespace webapi.Models
 
         [Column("cpf_cnpj")]
         [Required]
+        [JsonIgnore] //não mostra essa propriedade no json no Swagger
         public string Cpf_Cnpj { get; set; }
 
         [NotMapped]
