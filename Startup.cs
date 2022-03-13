@@ -34,7 +34,11 @@ namespace webapi
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "webapi", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { 
+                    Title = "Web API Desafio 21 dias", 
+                    Version = "v2",
+                    Description = "Primeira Web API feita com alunos no desafio 21 dias" 
+                    });
             });
         }
 
@@ -44,10 +48,10 @@ namespace webapi
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "webapi v1"));
             }
 
+            app.UseSwagger();
+            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Desafio 21 dias"));
             app.UseHttpsRedirection();
 
             app.UseRouting();

@@ -19,16 +19,11 @@ namespace webapi.ModelViews
             },
             new
             {
-                Item = new 
+                Item = new List<dynamic>()
                 {
-                    Path =  "/alunos/api/listar-alunos"
-                }
-            },
-            new
-            {
-                Item = new 
-                {
-                    Path =  "/professores/api/listar-professores"
+                    new {Path =  "/alunos/api/listar-alunos"},
+                    new {Path =  "/professores/api/listar-professores"},
+                    new {Path =  "/fornecedores/api/listar-fornecedores"} 
                 }
             }
         };

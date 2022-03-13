@@ -1,5 +1,6 @@
 using System.Linq;
 using System.Threading.Tasks;
+using EntityFrameworkPaginateCore;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using webapi.Models;
@@ -13,6 +14,8 @@ namespace webapi.Controllers
     {
         private readonly DbContexto _context;
 
+        private const int QUANTIDADE_POR_PAGINA = 3;
+
         public AlunosController(DbContexto context)
         {
             _context = context;
@@ -20,9 +23,9 @@ namespace webapi.Controllers
 
         // GET: Alunos
         [HttpGet("listar-alunos")]
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int page = 1)
         {
-            return Ok(await _context.Alunos.ToListAsync());
+            return StatusCode(200, await _context.Alunos.OrderBy(x => x.Id).PaginateAsync(page, QUANTIDADE_POR_PAGINA));
         }
 
         // GET: Alunos/Details/5

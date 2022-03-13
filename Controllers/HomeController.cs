@@ -12,6 +12,12 @@ namespace webapi.Controllers
     [Route("/")]
     public class HomeController : ControllerBase
     {
+        // [HttpGet]
+        // public IActionResult Index()
+        // {
+        //     return Redirect("/swagger");
+        // }
+
         [HttpGet]
         public HomeView Index()
         {

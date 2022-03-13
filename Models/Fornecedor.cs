@@ -16,7 +16,8 @@ namespace webapi.Models
         
         [Column("nome_fantasia")]
         [Required]
-        public string Nome { get; set; }
+        [JsonPropertyName("nome")] //define como será o display do nome desta propriedade na documentação do Swagger
+        public string NomeFantasia { get; set; }
         
         [Column("razao")]
         [Required]
