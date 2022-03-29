@@ -7,8 +7,8 @@
 
 # Comandos iniciais:
 ``` bash
-  mkdir aula-desafio21dias-mvc-entityframework
-  cd aula-desafio21dias-mvc-entityframework
+  mkdir webapi-alunos-professores
+  cd webapi-alunos-professores
   dotnet new webapi
 ```
 
@@ -23,7 +23,7 @@
   git init
   git add .
   git commit -m "Iniciando projeto"
-  git remote add origin git@github.com:Rafael955/aula-desafio-21dias-mvc-entityframework.git
+  git remote add origin git@github.com:Rafael955/api-desafio21dias.git
   git branch -M main
   git push -u origin main
 ```
