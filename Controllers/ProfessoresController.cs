@@ -48,7 +48,6 @@ namespace webapi.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost("cadastrar-professor")]
-        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Nome,Salario")] Professor professor)
         {
             if (ModelState.IsValid)
@@ -71,7 +70,6 @@ namespace webapi.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPut("atualizar-professor/{id:int}")]
-        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,Salario")] Professor professor)
         {
             if (id != professor.Id)
@@ -109,7 +107,6 @@ namespace webapi.Controllers
         }
 
         // POST: Professores/Delete/5
-        [ValidateAntiForgeryToken]
         [HttpDelete("remover-professor/{id:int}")]
         public async Task<IActionResult> Delete(int id)
         {
